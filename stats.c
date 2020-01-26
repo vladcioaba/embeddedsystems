@@ -59,7 +59,7 @@ double find_median(unsigned char arr[], unsigned int len) {
   double median = 0;
   if (len) {
     if (len % 2 == 0) {
-      median = (arr[(len-1)/2] + arr[(len-1)/2])/2.f;
+      median = (arr[(len-1)/2] + arr[len/2])/2.f;
     } else {
       median = arr[len/2];
     }
