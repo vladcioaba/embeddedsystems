@@ -1,1 +1,2 @@
-/*    Vlad Cioaba Embedded Systems Assessment 1    */
+/* Author: Vlad Cioaba
+   Project: Week 1 application assignment*/

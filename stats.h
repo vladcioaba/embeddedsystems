@@ -4,8 +4,8 @@
  * Redistribution, modification or use of this software in source or binary
  * forms is permitted as long as the files maintain this copyright. Users are 
  * permitted to modify this and use it to learn about the field of embedded
- * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
+ * software. Vlad Cioaba is not liable for any misuse of this material. 
+ *
  *
  *****************************************************************************/
 
@@ -53,10 +53,10 @@ void print_array(unsigned char arr[], unsigned int len);
  * @param unsigned char[] 	the array
  * @param unsigned int 		length of the array
  *
- * @return double 	median value
+ * @return unsigned char 	median value
  */
 
-double find_median(unsigned char arr[], unsigned int len);
+unsigned char find_median(unsigned char arr[], unsigned int len);
 
 /**
  * @brief Function to return mean value of an array. 
@@ -66,10 +66,10 @@ double find_median(unsigned char arr[], unsigned int len);
  * @param unsigned char[] 	the array
  * @param unsigned int 		length of the array
  *
- * @return double 	mean value
+ * @return unsigned char 	mean value
  */
 
-double find_mean(unsigned char arr[], unsigned int len);
+unsigned char find_mean(unsigned char arr[], unsigned int len);
 
 /**
  * @brief Function to return maximum value of an array. 

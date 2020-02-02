@@ -1,11 +1,10 @@
 /******************************************************************************
- * Copyright (C) 2017 by Alex Fosdick - University of Colorado
+ * Copyright (C) 2020 by Vlad Cioaba
  *
  * Redistribution, modification or use of this software in source or binary
  * forms is permitted as long as the files maintain this copyright. Users are 
  * permitted to modify this and use it to learn about the field of embedded
- * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
+ * software. Vlad Cioaba is not liable for any misuse of this material. 
  *
  *****************************************************************************/
 
@@ -29,15 +28,14 @@ void print_statistics(unsigned char arr[], unsigned int len) {
   printf("initial array:\n");
   print_array(arr, len);
   printf("\n");
-  printf("maximum: %d\n", find_maximum(arr, len));
-  printf("minimum: %d\n", find_minimum(arr, len));
-  printf("\n");
-  sort_array(arr, len);
   printf("sorted array:\n");
   print_array(arr, len);
+  sort_array(arr, len);
   printf("\n");
-  printf("median: %f\n", find_median(arr, len));
-  printf("mean: %f\n", find_mean(arr, len));
+  printf("maximum: %d\n", find_maximum(arr, len));
+  printf("minimum: %d\n", find_minimum(arr, len));
+  printf("median: %d\n", find_median(arr, len));
+  printf("mean: %d\n", find_mean(arr, len));
 }
 
 void print_array(unsigned char arr[], unsigned int len) {
@@ -55,7 +53,7 @@ void print_array(unsigned char arr[], unsigned int len) {
   }
 }
 
-double find_median(unsigned char arr[], unsigned int len) {
+unsigned char find_median(unsigned char arr[], unsigned int len) {
   double median = 0;
   if (len) {
     if (len % 2 == 0) {
@@ -67,18 +65,19 @@ double find_median(unsigned char arr[], unsigned int len) {
   return median;
 }
 
-double find_mean(unsigned char arr[], unsigned int len) {
+unsigned char find_mean(unsigned char arr[], unsigned int len) {
   if (len) {
     unsigned long sum = 0;
     for (unsigned int i = 0; i < len; ++i) {
       sum += arr[i];
     }
-    return sum / (double)len;
+    return sum / len;
   }
   return 0;
 }
 
 unsigned char find_maximum(unsigned char arr[], unsigned int len) {
+  /*
   unsigned char maxc = 255;
   if (len) {
     for (unsigned int i = 0; i < len; ++i) {
@@ -88,9 +87,15 @@ unsigned char find_maximum(unsigned char arr[], unsigned int len) {
     }
   }
   return maxc;
+  */
+  if (len) {
+    return arr[0];
+  }
+  return 0;
 }
 
 unsigned char find_minimum(unsigned char arr[], unsigned int len) {
+  /*
   if (len) {
     unsigned char minc = 0;
     for (unsigned int i = 0; i < len; ++i) {
@@ -99,6 +104,10 @@ unsigned char find_minimum(unsigned char arr[], unsigned int len) {
       }
     }
     return minc;
+  }
+  */
+  if (len) {
+    return  arr[len-1];
   }
   return 0;
 }
